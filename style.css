@@ -1,0 +1,25 @@
+.jumbotron{
+    height: 700px;
+}
+
+button{
+    width:140px;
+}
+
+.btnContainer{
+    padding:200px;
+}
+
+.quest{
+    font-size:50px;
+}
+
+.timeRemaining{
+    font-size: 40px;
+}
+
+.quiz-container{
+    position: relative;
+    height: 200px;
+    margin-top: 40px;
+  }

@@ -1,0 +1,203 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>The Animal Trivia Game</title>
+  <meta name="description" content="The HTML5 Herald">
+
+
+  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
+  <!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+  <![endif]-->
+
+</head>
+<body>
+
+<div class="container">
+    <div class="jumbotron text-center">
+      <h1>The Animal Trivia Game</h1> 
+      
+      <div class="btnContainer">
+          <div class=""
+              Time remaining:
+                <p></p>
+          </div>
+          <button type="button" class="btn btn-default btn-lg btn-primary startBtn">START</button>
+      </div>
+    </div>
+
+    <p id ="score"></p>
+    <p id="question"></p>
+
+  <script type="text/javascript>
+
+  //Variables//
+
+  var questions = {
+      q1: ["What is the largest rodent in North America?", ", "c"],
+      q2: ["What is the only bird known to fly backwards?", ", "b"],
+      q3: ["What is the largest living bird by wingspan?", ", "a"],
+      q4: ["What breed of horse is best known for its use in racing?", ", "b"],
+      q5: ["Which snake, who's untreated bite is almost 100 percent fatal, 
+      is the world's fastest snake on land?", ", "c"],
+      q6: ["What is the largest species of terrestrial crab in the world?", ", "b"],
+      q7: ["The term wake, kettle, or committee refers to a group of what bird?", ", "a"],
+  };
+
+//We want to start with a score of 0.
+var score = 0;
+
+//Variable will hold the index of curent question.
+questionIndex = 0;
+
+//Array of questions.
+var questionsArray = [questions.q1, questions.q2, questions.q3, questions.q4, questions.q5 ,questions.q6,
+                      questions.q7];
+
+
+ var time = 20;
+ var quesitions = {
+     q1: {'What is the largest rodent in North America?',
+     answers: {
+     a: "Opossum",
+     b: "Capybara",
+     c: "Beaver",
+     }
+     correctAnswer: "c"
+    },
+ };
+ 
+
+ q2: {'What is the only bird known to fly backwards?',
+     answers: {
+     a: "Pigeons",
+     b: "Hummingbirds",
+     c: "Parrots",
+     }
+     correctAnswer: "b"
+    },
+ };
+
+ q3: {'What is the largest living bird by wingspan?',
+     answers: {
+     a: "Albatross",
+     b: "California Condor",
+     c: "Great White Pelican",
+     }
+     correctAnswer: "a"
+    },
+ };
+
+ q4: {'What breed of horse is best known for its use in racing?',
+     answers: {
+     a: "Quarter Horse",
+     b: "Thoroughbred",
+     c: "French Trotter",
+     }
+     correctAnswer: "b"
+    },
+ };
+
+ q5: {'Which snake, who's untreated bite is almost 100 percent fatal, 
+ is the world's fastesd snake on land?',
+ answers: {
+ a: "King Cobra",
+ b: "Cottonmouth",
+ c: "Black Mamba",
+ }
+ correctAnswer: "c"
+},
+};
+
+q6: {'What is the largest species of terrestrial crab in the world?',
+ answers: {
+ a: "King Crab",
+ b: "Coconut Crab",
+ c: "Blue Crab",
+ }
+ correctAnswer: "b"
+},
+};
+
+q7: {'The term wake, kettle, or committee refers to a group of what bird?',
+ answers: {
+ a: "Vutlure",
+ b: "Swan",
+ c: "Turkey",
+ }
+ correctAnswer: "a"
+},
+};
+
+var correctAnswers;
+var wrongAnswers;
+var interalId;
+ //--functions-->
+
+console.log(questions.q1['What is the largest 
+rodent in North America?'].c);
+ function startGame()
+    {
+
+    }
+
+function gamePlay()
+{
+    $('.startBtn').on('click',function()
+    {
+        //removes all button with the class startBtn//
+        $('button').remove('.startBtn');
+        timeCount();
+    });
+
+    function timeCount()
+    {
+        setInterval(function(){time },3000);
+        $('.btnContainer').append(<div class="timeRemaining">' + 'Time Remaining: ' + time + ' </div>');
+       
+    }
+        quest1();
+    });
+}
+function quest1();
+{
+    //Testing//Create new Div and places it inside btnContainer
+    
+
+    var newDiv =$('<div class=" quest q1">');
+        newDiv.html(['questions.q1['answers']);
+
+        $('.btnContainer').append(newDiv);
+        intervalId = setInvterval(timeCount,1000);
+    }
+
+    funcion timeCount(){
+        var timeDiv =$('<div class="timeRemaining">');
+                timeDiv.html('Time Remaining : " + time');
+                $('.btnContainer').append(timeDiv);
+                $('.btnContainer').remove('.timeRemaining');
+
+            time --;
+         //Test
+         console.log(time);
+         
+         //Clears and stops time
+        $('div').remove('timeRemaining');
+        if (time === 0)
+        {
+            clearInterval(intervalId);
+            //Debug
+            console.log(true);
+        }
+    }
+    </div>')
+}
+
+
+
+</body>
+</html>
